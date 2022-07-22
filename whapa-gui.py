@@ -1258,7 +1258,7 @@ To export chats on an iOS phone, here are the steps:
                 self.whachat_file.set(self.path)
             else:
                 self.whachat_file.set(self.path.replace("/", "\\"))
-
+                
             if system == "Linux":
                 exec = self.system_slash(r'python3 "{}/libs/whachat.py" "{}" -p -s {}'.format(whapa_path, self.whachat_file.get(), self.whachat_box_os.get()))
             else:
@@ -1308,7 +1308,7 @@ To export chats on an iOS phone, here are the steps:
         """Check that radiobutton is marked"""
 
         if self.whachat_box_os.get() == "android":
-            self.combo_whachat_format.current(2)
+            self.combo_whachat_format.current(2)   
         else:
             self.combo_whachat_format.current(0)
 
@@ -1334,7 +1334,7 @@ To export chats on an iOS phone, here are the steps:
         if system == "Linux":
             exec = self.system_slash(r'python3 "{}/libs/whachat.py" {}'.format(whapa_path, self.cmd))
         else:
-            exec = self.system_slash(r'python "{}/libs/whachat.py" {}'.format(whapa_path, self.cmd))
+            exec = self.system_slash(r'python "{}/libs/whachat.py" '.format(whapa_path)) + self.cmd
 
         self.label_status.set(exec)
         os.system(exec)
